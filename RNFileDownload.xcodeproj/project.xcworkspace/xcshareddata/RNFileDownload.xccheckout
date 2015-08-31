@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8AEE95D2-55F7-44EB-B49C-5BCA9E4416C9</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RNFileDownload</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>4C61565C22E5D57386E06970C4CA57C878AF06B8</key>
+		<string>bitbucket.org:yuanyiz/mb-ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>node_modules/react-native-file-download/RNFileDownload.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>4C61565C22E5D57386E06970C4CA57C878AF06B8</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>bitbucket.org:yuanyiz/mb-ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>4C61565C22E5D57386E06970C4CA57C878AF06B8</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4C61565C22E5D57386E06970C4CA57C878AF06B8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>mb-ios</string>
+		</dict>
+	</array>
+</dict>
+</plist>
