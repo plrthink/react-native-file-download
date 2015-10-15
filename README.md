@@ -38,7 +38,10 @@ const FileDownload = require('react-native').NativeModules.RNFileDownload
 Example
 
 ```js
-FileDownload.download(`url`, `folderPath`)
+let url = '/path/to/remote/file'
+let folderPath = '/path/to/local/destination/folder'
+
+FileDownload.download(url, folderPath)
 .then(() => {
   console.log('downloaded!')
 })
