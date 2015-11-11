@@ -25,9 +25,14 @@ npm install react-native-file-download --save
 require it in your file
 
 ```js
-const FileDownload = require('react-native').NativeModules.RNFileDownload
+const FileDownload = require('react-native-file-download')
 ```
 
+you may also want to use something like [react-native-fs](https://github.com/johanneslumpe/react-native-fs) to access the file system (check its repo for more information)
+
+```js
+const RNFS = require('react-native-fs')
+```
 
 ## API
 
@@ -39,7 +44,7 @@ Example
 
 ```js
 let url = '/path/to/remote/file'
-let folderPath = '/path/to/local/destination/folder'
+let folderPath = RNFS.DocumentDirectoryPath
 
 FileDownload.download(url, folderPath)
 .then(() => {
