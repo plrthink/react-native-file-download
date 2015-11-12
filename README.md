@@ -50,7 +50,7 @@ FileDownload.download(url, folderPath)
 .then(() => {
   console.log('downloaded!')
 })
-catch((error) => {
+.catch((error) => {
   console.log(error)
 })
 ```
