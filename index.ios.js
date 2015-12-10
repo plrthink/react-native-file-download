@@ -1,9 +1,9 @@
 'use strict'
 
 var RNFileDownload = require('react-native').NativeModules.RNFileDownload
-var Promise = require('bluebird')
+var promisify = require("es6-promisify")
 
-var _download = Promise.promisify(RNFileDownload.download)
+var _download = promisify(RNFileDownload.download)
 
 var _error = (err) => {
   throw error
