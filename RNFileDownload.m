@@ -26,7 +26,7 @@ RCT_EXPORT_METHOD(download:(NSString *)source targetPath:(NSString *)targetPath 
                                                       [[NSFileManager defaultManager] moveItemAtURL:location
                                                                                               toURL:targetURL
                                                                                               error:nil];
-                                                      callback(@[[NSNull null]]);
+                                                      callback(@[[NSNull null], targetURL.absoluteString]);
                                                   } else {
                                                       NSLog(@"%@", [error description]);
                                                       callback(@[[error description]]);
