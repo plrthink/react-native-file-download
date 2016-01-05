@@ -47,8 +47,8 @@ let url = '/path/to/remote/file'
 let folderPath = RNFS.DocumentDirectoryPath
 
 FileDownload.download(url, folderPath)
-.then(() => {
-  console.log('downloaded!')
+.then((response) => {
+  console.log('downloaded! file saved to: ' + response)
 })
 .catch((error) => {
   console.log(error)
