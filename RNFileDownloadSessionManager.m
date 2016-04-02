@@ -50,7 +50,7 @@
         [[NSFileManager defaultManager] moveItemAtURL:location
                                                 toURL:targetURL
                                                 error:nil];
-    self.callback(@[[NSNull null], targetURL.absoluteString);
+    self.callback(@[[NSNull null], targetURL.absoluteString]);
 }
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error {
