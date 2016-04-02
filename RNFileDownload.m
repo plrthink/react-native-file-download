@@ -7,33 +7,31 @@
 //
 
 #import "RNFileDownload.h"
+#import "RNFileDownloadSessionManager.h"
 
 @implementation RNFileDownload
+@synthesize bridge = _bridge;
 
 RCT_EXPORT_MODULE();
 
-RCT_EXPORT_METHOD(download:(NSString *)source targetPath:(NSString *)targetPath callback:(RCTResponseSenderBlock)callback) {
+RCT_EXPORT_METHOD(download:(NSString *)source targetPath:(NSString *)targetPath downloadFileName:(NSString *)fileName callback:(RCTResponseSenderBlock)callback) {
+    if(!source)
+        callback(@[@"source need to be not null"]);
+    if(!targetPath)
+        callback(@[@"targetPath need to be not null"]);
+
     NSURL *URL = [NSURL URLWithString:source];
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    NSURLSession *session = [NSURLSession sharedSession];
-    
-    NSURLSessionDownloadTask *downloadTask = [session downloadTaskWithRequest:request
-                                                            completionHandler:
-                                              ^(NSURL *location, NSURLResponse *response, NSError *error) {
-                                                  if (!error) {
-                                                      NSURL *targetDirectoryURL = [NSURL fileURLWithPath:targetPath];
-                                                      NSURL *targetURL = [targetDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
-                                                      [[NSFileManager defaultManager] moveItemAtURL:location
-                                                                                              toURL:targetURL
-                                                                                              error:nil];
-                                                      callback(@[[NSNull null], targetURL.absoluteString]);
-                                                  } else {
-                                                      NSLog(@"%@", [error description]);
-                                                      callback(@[[error description]]);
-                                                  }
-                                              }
-                                              ];
-    
+    RNFileDownloadSessionManager *manager = [[RNFileDownloadSessionManager alloc] initWithTargetPath:targetPath
+                                                                                            downloadFileName:fileName
+                                                                                              bridge:self.bridge
+                                                                                            callback:callback];
+
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSession sharedSession].delegate
+                                                             delegate:manager
+                                                        delegateQueue:[NSOperationQueue mainQueue]];
+
+    NSURLSessionDownloadTask *downloadTask = [session downloadTaskWithRequest:request];
     [downloadTask resume];
 }
 

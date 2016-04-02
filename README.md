@@ -54,3 +54,26 @@ FileDownload.download(url, folderPath)
   console.log(error)
 })
 ```
+
+**addListener(source: string, callback: function): EmitterSubscription**
+
+> event listener for progress of download
+
+Example
+
+```js
+let url = '/path/to/remote/file'
+let folderPath = RNFS.DocumentDirectoryPath
+
+FileDownload.addListener(url, (info) => {
+  console.log('complete ' + (info.totalBytesWritten / info.totalBytesExpectedToWrite * 100) + '%');
+});
+
+FileDownload.download(url, folderPath)
+.then((response) => {
+  console.log('downloaded! file saved to: ' + response)
+})
+.catch((error) => {
+  console.log(error)
+})
+```

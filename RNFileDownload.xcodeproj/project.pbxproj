@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A75BB64E1CAF99E600650394 /* RNFileDownloadSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A75BB64D1CAF99E600650394 /* RNFileDownloadSessionManager.m */; };
 		D045FC501B94140B00C00AF7 /* RNFileDownload.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D045FC4F1B94140B00C00AF7 /* RNFileDownload.h */; };
 		D045FC521B94140B00C00AF7 /* RNFileDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = D045FC511B94140B00C00AF7 /* RNFileDownload.m */; };
 /* End PBXBuildFile section */
@@ -25,6 +26,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A75BB64C1CAF99E600650394 /* RNFileDownloadSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNFileDownloadSessionManager.h; sourceTree = "<group>"; };
+		A75BB64D1CAF99E600650394 /* RNFileDownloadSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNFileDownloadSessionManager.m; sourceTree = "<group>"; };
 		D045FC4C1B94140B00C00AF7 /* libRNFileDownload.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNFileDownload.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D045FC4F1B94140B00C00AF7 /* RNFileDownload.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNFileDownload.h; sourceTree = "<group>"; };
 		D045FC511B94140B00C00AF7 /* RNFileDownload.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNFileDownload.m; sourceTree = "<group>"; };
@@ -47,6 +50,8 @@
 			children = (
 				D045FC4F1B94140B00C00AF7 /* RNFileDownload.h */,
 				D045FC511B94140B00C00AF7 /* RNFileDownload.m */,
+				A75BB64C1CAF99E600650394 /* RNFileDownloadSessionManager.h */,
+				A75BB64D1CAF99E600650394 /* RNFileDownloadSessionManager.m */,
 				D045FC5B1B94140B00C00AF7 /* RNFileDownloadTests */,
 				D045FC4D1B94140B00C00AF7 /* Products */,
 			);
@@ -132,6 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A75BB64E1CAF99E600650394 /* RNFileDownloadSessionManager.m in Sources */,
 				D045FC521B94140B00C00AF7 /* RNFileDownload.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
