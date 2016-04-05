@@ -14,8 +14,8 @@ var _error = (err) => {
 }
 
 var FileDownload = {
-  download(source, target, fileName=null) {
-    return _download(source, target, fileName)
+  download(source, target, fileName=null, headers={}) {
+    return _download(source, target, fileName, headers)
       .catch(_error)
   },
   addListener(source, callback) {

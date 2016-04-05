@@ -14,24 +14,30 @@
 
 RCT_EXPORT_MODULE();
 
-RCT_EXPORT_METHOD(download:(NSString *)source targetPath:(NSString *)targetPath downloadFileName:(NSString *)fileName callback:(RCTResponseSenderBlock)callback) {
+RCT_EXPORT_METHOD(download:(NSString *)source targetPath:(NSString *)targetPath downloadFileName:(NSString *)fileName headers:(NSDictionary *)headers callback:(RCTResponseSenderBlock)callback) {
     if(!source)
         callback(@[@"source need to be not null"]);
     if(!targetPath)
         callback(@[@"targetPath need to be not null"]);
 
     NSURL *URL = [NSURL URLWithString:source];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
+    for (NSString *key in headers.allKeys){
+        [request setValue:headers[key] forHTTPHeaderField:key];
+    }
+
     RNFileDownloadSessionManager *manager = [[RNFileDownloadSessionManager alloc] initWithTargetPath:targetPath
-                                                                                            downloadFileName:fileName
+                                                                                    downloadFileName:fileName
+                                                                                             headers:headers
                                                                                               bridge:self.bridge
                                                                                             callback:callback];
 
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSession sharedSession].delegate
-                                                             delegate:manager
-                                                        delegateQueue:[NSOperationQueue mainQueue]];
+                                                          delegate:manager
+                                                     delegateQueue:[NSOperationQueue mainQueue]];
 
     NSURLSessionDownloadTask *downloadTask = [session downloadTaskWithRequest:request];
+
     [downloadTask resume];
 }
 

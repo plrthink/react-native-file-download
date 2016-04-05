@@ -43,12 +43,16 @@ const RNFS = require('react-native-fs')
 Example
 
 ```js
-let url = '/path/to/remote/file'
-let folderPath = RNFS.DocumentDirectoryPath
+const URL = '/path/to/remote/file'
+const DEST = RNFS.DocumentDirectoryPath
+const fileName = 'zip.zip'
+const headers = {
+  'Accept-Language': 'en-US'
+}
 
-FileDownload.download(url, folderPath)
+FileDownload.download(URL, DEST, fileName, headers)
 .then((response) => {
-  console.log('downloaded! file saved to: ' + response)
+  console.log(`downloaded! file saved to: ${response}`)
 })
 .catch((error) => {
   console.log(error)
@@ -62,16 +66,20 @@ FileDownload.download(url, folderPath)
 Example
 
 ```js
-let url = '/path/to/remote/file'
-let folderPath = RNFS.DocumentDirectoryPath
+const URL = '/path/to/remote/file'
+const DEST = RNFS.DocumentDirectoryPath
+const fileName = 'zip.zip'
+const headers = {
+  'Accept-Language': 'en-US'
+}
 
-FileDownload.addListener(url, (info) => {
-  console.log('complete ' + (info.totalBytesWritten / info.totalBytesExpectedToWrite * 100) + '%');
+FileDownload.addListener(URL, (info) => {
+  console.log(`complete ${(info.totalBytesWritten / info.totalBytesExpectedToWrite * 100)}%`);
 });
 
-FileDownload.download(url, folderPath)
+FileDownload.download(URL, DEST, fileName, headers)
 .then((response) => {
-  console.log('downloaded! file saved to: ' + response)
+  console.log(`downloaded! file saved to: ${response}`)
 })
 .catch((error) => {
   console.log(error)
