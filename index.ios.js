@@ -6,12 +6,12 @@ var promisify = require("es6-promisify")
 var _download = promisify(RNFileDownload.download)
 
 var _error = (err) => {
-  throw error
+  throw err
 }
 
 var FileDownload = {
-  download(source, target) {
-    return _download(source, target)
+  download(source, target, headers = {}) {
+    return _download(source, target, headers)
       .catch(_error)
   }
 }

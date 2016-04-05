@@ -12,17 +12,29 @@
 
 RCT_EXPORT_MODULE();
 
-RCT_EXPORT_METHOD(download:(NSString *)source targetPath:(NSString *)targetPath callback:(RCTResponseSenderBlock)callback) {
+RCT_EXPORT_METHOD(download:(NSString *)source targetPath:(NSString *)targetPath headers:(NSDictionary *)headers callback:(RCTResponseSenderBlock)callback) {
     NSURL *URL = [NSURL URLWithString:source];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
+    for (NSString *key in headers.allKeys){
+        [request setValue:headers[key] forHTTPHeaderField:key];
+    }
+    
     NSURLSession *session = [NSURLSession sharedSession];
     
     NSURLSessionDownloadTask *downloadTask = [session downloadTaskWithRequest:request
                                                             completionHandler:
                                               ^(NSURL *location, NSURLResponse *response, NSError *error) {
-                                                  if (!error) {
+                                                  NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                                                  if ([httpResponse statusCode]>=400){
+                                                      NSLog(@"HTTP RESPONSE CODE %d", [httpResponse statusCode]);
+                                                      callback(@[[NSString stringWithFormat:@"Error http status code: %d", [httpResponse statusCode]]]);
+                                                  } else if (!error) {
                                                       NSURL *targetDirectoryURL = [NSURL fileURLWithPath:targetPath];
-                                                      NSURL *targetURL = [targetDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
+                                                      BOOL isDirectory;
+                                                      BOOL fileExistsAtPath = [[NSFileManager defaultManager] fileExistsAtPath:targetPath isDirectory:&isDirectory];
+
+                                                      NSURL *targetURL = fileExistsAtPath && isDirectory ? [targetDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]] : targetDirectoryURL;
+                                                      
                                                       [[NSFileManager defaultManager] moveItemAtURL:location
                                                                                               toURL:targetURL
                                                                                               error:nil];
