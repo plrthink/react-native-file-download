@@ -1,4 +1,4 @@
-# React Native File Download
+# React Native File Download [![react-native-file-download](http://img.shields.io/npm/dm/react-native-file-download.svg)](https://www.npmjs.org/package/react-native-file-download)
 
 Native file download utility for react-native
 
