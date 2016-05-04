@@ -10,7 +10,7 @@ Note: this project is under development and functionality will improve over time
 npm install react-native-file-download --save
 ```
 
- Note that does not support Android.
+# Note that does not support Android.
 
 ## Getting started - iOS
 
