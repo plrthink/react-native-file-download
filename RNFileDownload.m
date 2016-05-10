@@ -28,7 +28,6 @@ RCT_EXPORT_METHOD(download:(NSString *)source targetPath:(NSString *)targetPath 
 
     RNFileDownloadSessionManager *manager = [[RNFileDownloadSessionManager alloc] initWithTargetPath:targetPath
                                                                                     downloadFileName:fileName
-                                                                                             headers:headers
                                                                                               bridge:self.bridge
                                                                                             callback:callback];
 

@@ -4,13 +4,13 @@ Native file download utility for react-native
 
 Note: this project is under development and functionality will improve over time. Currently it provides only the bare minimum of functionality.
 
+##### *Note that does not support Android.*
+
 ## Installation
 
 ```bash
 npm install react-native-file-download --save
 ```
-
-# Note that does not support Android.
 
 ## Getting started - iOS
 
