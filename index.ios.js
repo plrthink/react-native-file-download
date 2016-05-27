@@ -1,6 +1,6 @@
 'use strict'
 
-var React = require('react-native')
+var React = require('react')
 var RNFileDownload = React.NativeModules.RNFileDownload
 var NativeAppEventEmitter = React.NativeAppEventEmitter
 var promisify = require("es6-promisify")
