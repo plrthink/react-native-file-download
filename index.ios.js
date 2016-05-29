@@ -1,8 +1,10 @@
 'use strict'
 
-var React = require('react-native')
-var RNFileDownload = React.NativeModules.RNFileDownload
-var NativeAppEventEmitter = React.NativeAppEventEmitter
+import {
+	NativeModules,
+	NativeAppEventEmitter
+} from 'react-native';
+var RNFileDownload = NativeModules.RNFileDownload;
 var promisify = require("es6-promisify")
 
 let progressEventName = 'RNFileDownloadProgress'
