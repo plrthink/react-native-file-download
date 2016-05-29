@@ -4,7 +4,7 @@
 
 ##### *Note that does not support Android.*
 
-##### *Breaking change -- Now supports React Native v25+.  Not compatible with prior versions.  You can continue using older versions of React Native with react-native-file-download@0.0.9. *
+##### *Breaking change -- Now supports React Native v25+. Not compatible with prior versions. You can continue using older versions of React Native with react-native-file-download@0.0.9.*
 
 ## Installation
 
