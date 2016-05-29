@@ -1,18 +1,16 @@
-# React Native File Download [![react-native-file-download](http://img.shields.io/npm/dm/react-native-file-download.svg)](https://www.npmjs.org/package/react-native-file-download)
+# React Native File Download [![react-native-file-download](http://img.shields.io/npm/dm/react-native-file-download.svg)](https://www.npmjs.org/package/react-native-file-download) [![npm version](https://badge.fury.io/js/react-native-file-download.svg)](https://badge.fury.io/js/react-native-file-download)
 
-Native file download utility for react-native
-
-Note: this project is under development and functionality will improve over time. Currently it provides only the bare minimum of functionality.
+> Native file download utility for react-native
 
 ##### *Note that does not support Android.*
+
+##### *Breaking change -- Now supports React Native v25+.  Not compatible with prior versions.  You can continue using older versions of React Native with react-native-file-download@0.0.9. *
 
 ## Installation
 
 ```bash
 npm install react-native-file-download --save
 ```
-
-## Breaking change -- Now supports React Native v25+.  Not compatible with prior versions.  You can continue using older versions of React Native with react-native-file-download@0.0.9.
 
 ## Getting started - iOS
 
