@@ -1,10 +1,10 @@
+## This repo is deprecated in favor of [react-native-fs](https://github.com/johanneslumpe/react-native-fs#promise-downloadfileoptions)
+
 # React Native File Download [![react-native-file-download](http://img.shields.io/npm/dm/react-native-file-download.svg)](https://www.npmjs.org/package/react-native-file-download) [![npm version](https://badge.fury.io/js/react-native-file-download.svg)](https://badge.fury.io/js/react-native-file-download)
 
 > Native file download utility for react-native
 
 ##### *Note that does not support Android.*
-
-##### *Breaking change -- Now supports React Native v25+. Not compatible with prior versions. You can continue using older versions of React Native with react-native-file-download@0.0.9.*
 
 ## Installation
 
@@ -14,11 +14,11 @@ npm install react-native-file-download --save
 
 ## Getting started - iOS
 
-1. In XCode, in the project navigator right click `Libraries` ➜ `Add Files to [your project's name]`
+1. In Xcode, in the project navigator right click `Libraries` ➜ `Add Files to [your project's name]`
 2. Go to `node_modules` ➜ `react-native-file-download` and add `RNFileDownload.xcodeproj`
 3. Add `libRNFileDownload.a` (from 'Products' under RNFileDownload.xcodeproj) to your project's `Build Phases` ➜ `Link Binary With Libraries` phase
 4. Look for Header Search Paths and make sure it contains both `$(SRCROOT)/../react-native/React` and `$(SRCROOT)/../../React` - mark both as recursive
-5. Run your project (`Cmd+R`)
+5. Run your project (`CMD+R`)
 
 ## Usage
 
