@@ -12,6 +12,8 @@
 npm install react-native-file-download --save
 ```
 
+## Breaking change -- Now supports React Native v25+.  Not compatible with prior versions.
+
 ## Getting started - iOS
 
 1. In Xcode, in the project navigator right click `Libraries` ➜ `Add Files to [your project's name]`
